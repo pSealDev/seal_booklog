@@ -1,0 +1,72 @@
+body {
+  background-color: #eeeeee;
+  background-image: linear-gradient(to right bottom, rgba(59, 163, 149, 0.8), rgba(117, 216, 213, 0.9)), url(../images/wood.jpg);
+}
+
+header {
+  color: white;
+  background-color: #c38d9e;
+}
+
+header > h1 {
+  padding-top: 15px;
+}
+
+
+
+input[type=text] {
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=file] {
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  color: #c38d9e;
+}
+
+
+textarea{
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+
+/*Table*/
+
+table, .table tbody, .table tr, .table td {
+  display: block;
+  width: 100%; 
+  border-top: 1; 
+  border-color: '#c38d9e';
+  border-style: 'solid'; 
+  background-color: "white";
+}
+
+.table tr {
+  margin-bottom : 15px;
+}
+
+.table td {
+  color: red;
+  text-align: right;
+  padding-left: 50%;
+  text-align: right;
+  position: relative;
+}
+
+.table td::before {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  padding-left: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left; 
+}
+
+
+ 
