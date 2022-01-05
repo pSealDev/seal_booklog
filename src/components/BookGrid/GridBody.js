@@ -6,8 +6,7 @@ import TableRow from '@material-ui/core/TableRow'
 import { withStyles } from '@material-ui/core/styles'
 import TableCell from '@material-ui/core/TableCell'
 import Avatar from '@material-ui/core/Avatar'
-import DateFnsUtils from '@date-io/date-fns'
-import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers"
+
 
 const StyledTableCell = withStyles(theme => ({
     head: {
@@ -21,39 +20,52 @@ const StyledTableCell = withStyles(theme => ({
     }
 }))(TableCell);
 
-function GridBody({vars}) {
+
+
+function GridBody({ vars }) {
 
     return (
         <>
-            {vars.books
+
+        {console.log("VARS.books" , vars.books)}
+
+            {/* {Books.map((bookDetail, index) => {
+                return <h1>{bookDetail.bookTitle}</h1>
+            })}  */}
+
+            {/* <SignUp /> */}
+
+            {!(vars.books.some(item => item === undefined)) && vars.books?.length > 0 ?(vars.books
                 .slice(vars.page * vars.rowsPerPage, vars.page * vars.rowsPerPage + vars.rowsPerPage)
-                .map(({ id, bookTitle, bookAuthor, bookNotes, bookIcon, startDate, endDate }) => (
-                    <TableRow key={id}>
-                        <StyledTableCell><Avatar style={{ backgroundColor: "#c38d9e" }}>{id}</Avatar></StyledTableCell>
-                        <StyledTableCell>{bookTitle}</StyledTableCell>
-                        <StyledTableCell>{bookAuthor}</StyledTableCell>
-                        <StyledTableCell>{bookNotes}</StyledTableCell>
-                        <StyledTableCell><img style={{ display: 'block', height: '100%', maxHeight: '100px' }} src={bookIcon} alt="icon" /></StyledTableCell>
-                        <StyledTableCell>{startDate}</StyledTableCell>
-                        <StyledTableCell>{endDate}</StyledTableCell>
+                .map(({ book_id, book_title, book_author, book_notes, book_icon, start_date, end_date }) => (
+                    <TableRow key={book_id}>
+                        <StyledTableCell><Avatar style={{ backgroundColor: "#c38d9e" }}>{book_id}</Avatar></StyledTableCell>
+                        {/* <StyledTableCell>{description}</StyledTableCell> */}
+                        <StyledTableCell>{book_title}</StyledTableCell>
+                        <StyledTableCell>{book_author}</StyledTableCell>
+                        <StyledTableCell>{book_notes}</StyledTableCell>
+                        <StyledTableCell><img style={{ display: 'block', height: '100%', maxHeight: '100px' }} src={book_icon} alt="icon" /></StyledTableCell>
+                        <StyledTableCell>{start_date}</StyledTableCell>
+                        <StyledTableCell>{end_date}</StyledTableCell>
                         <StyledTableCell>
-                            <IconButton onClick={() => vars.setBookToUpdate(id)}>
+                            <IconButton onClick={() => vars.setBookToUpdate(book_id)}>
                                 <EditIcon style={{ fill: "#c38d9e" }} />
                             </IconButton>
                         </StyledTableCell>
                         <StyledTableCell>
-                            <IconButton onClick={() => vars.deleteBook(id)}>
+                            <IconButton onClick={() => vars.deleteBook(book_id)}>
                                 <DeleteIcon style={{ fill: "#ff0000" }} />
                             </IconButton>
                         </StyledTableCell>
                     </TableRow >
                 ))
-            }
+            ) : vars.books ? ("no books") : ("loading")}
             {vars.emptyRows > 0 && (
                 <TableRow style={{ height: 53 * vars.emptyRows }}>
                     <TableCell />
                 </TableRow>
             )}
+
         </>
     )
 }

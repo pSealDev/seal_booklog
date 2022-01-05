@@ -1,6 +1,6 @@
 {
-  "short_name": "codeSpark App",
-  "name": "codeSpark code test app",
+  "short_name": "BookLog App",
+  "name": "PSeal BookLog App",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

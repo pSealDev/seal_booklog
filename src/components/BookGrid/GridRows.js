@@ -19,7 +19,7 @@ function GridRows() {
   return (
     <>
       <TableRow>
-        <StyledTableCell>Id</StyledTableCell>
+        <StyledTableCell>Book_Id</StyledTableCell>
         <StyledTableCell>Title</StyledTableCell>
         <StyledTableCell>Author</StyledTableCell>
         <StyledTableCell>Notes</StyledTableCell>
