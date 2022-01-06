@@ -2,7 +2,7 @@
 
 ## Keep track of the books in your personal library using PSeal BookLog
 
-This booklog was made using React for the front-end and PostgresSQL for the backend. 
+Made with React, PostGres, and MaterialUI. User can add books to the grid, create/read/update/delete from the book list. Tested with MirageJS, an api mocking library.
 
 Instructions to run:
 
