@@ -2,16 +2,34 @@
 
 ## Keep track of the books in your personal library using PSeal BookLog
 
-This booklog was made using React for the front-end and PostgresSQL for the backend. 
+Made with React, PostGres, and MaterialUI. User can add books to the grid, create/read/update/delete from the book list. Tested with MirageJS, an api mocking library.
 
 Instructions to run:
 
-First, you will need to create a PostGres database, to use this product. After install, edit the .env file to 
-use your 
+First, you will need to create a PostGres database, to use this product. Create a db.js file providing a user and password, as well as host and db. 
 
-npm install
+#####
+For example, the db.js file could look like this:
 
-From the folder with the package.json, npm start.
+const Pool = require("pg").Pool;
 
-Then cd into the server folder and npm start. 
+const pool = new Pool({
+ user: yourusername,
+ password: youruserpassword,
+ host: "yourhost",
+ database: "yourdatabase"
+ })
+ 
+ module.exports = pool; 
+ 
+ #####
+ 
+ Use npm install to get these files.
+ 
+ Then use command "npm start" to start the React app.
+ 
+ Navigate to the server folder and run "npm start" to start the server.
+  
+  
+ Enjoy!
 
